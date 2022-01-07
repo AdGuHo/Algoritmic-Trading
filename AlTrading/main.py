@@ -1,16 +1,20 @@
-# This is a sample Python script.
+# This is a learning project for Algoritmic Trading
+# Reference is : https://www.datacamp.com/community/tutorials/finance-python-trading
+# Author: AdHuGo (Github)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import quandl
+aapl = quandl.get("WIKI/AAPL", start_date="2006-10-01", end_date="2012-01-01")
 
-#asdasdsa
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print("Hi, {0}".format(name))  # Press Ctrl+F8 to toggle the breakpoint.
+print(aapl)
+
+#descrive() method shows us a summary info about the imported data
+print(aapl.describe())
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#print(aapl.asfreq("M", method="bfill"))
+
+# import matplotlib.pyplot as plt
+#
+# aapl["Close"].plot(grid=True)
+# plt.show()
